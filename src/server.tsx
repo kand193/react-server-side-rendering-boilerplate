@@ -9,9 +9,9 @@ import App from "./app/App";
 
 const app = express();
 
-app.get("*", (req, res) => {
+app.get("/*", (req, res) => {
   const markup = renderToString(
-    <StaticRouter>
+    <StaticRouter location={req.url}>
       <App />
     </StaticRouter>
   );
