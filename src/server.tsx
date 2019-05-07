@@ -26,5 +26,6 @@ app.get("/*", (req, res) => {
 });
 
 app.listen(1599, () => {
+  // tslint:disable-next-line
   console.log("Server listening on port 1599");
 });
