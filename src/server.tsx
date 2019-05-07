@@ -16,14 +16,13 @@ app.get("*", (req, res) => {
     </StaticRouter>
   );
 
-  const indexFile = path.resolve('./src/template.html');
-  fs.readFile(indexFile, "utf8", (err, data) =>
-    res.send(data.replace(
-      `<div id="app"></div>`,
-      `<div id="app">${markup}</div>`
-    ))
+  const indexFile = path.resolve("./src/template.html");
+  fs.readFile(indexFile, "utf8", (_, data) =>
+    res.send(
+      data.replace(`<div id="app"></div>`, `<div id="app">${markup}</div>`)
+    )
   );
-})
+});
 
 app.listen(1599, () => {
   console.log("Server listening on port 1599");
